@@ -59,7 +59,6 @@ def logout():
 def authorized():
     resp = github.authorized_response()
     if resp is None:
-    
         session.clear()
         message = 'Access denied: reason=' + request.args['error'] + ' error=' + request.args['error_description'] + ' full=' + pprint.pformat(request.args)      
     else:
@@ -77,13 +76,13 @@ def authorized():
     return render_template('message.html', message=message)
 
 
-@app.route('/Discussion')
-def renderDiscussion():
+@app.route('/page1')
+def renderPage1():
     if 'user_data' in session:
         user_data_pprint = pprint.pformat(session['user_data'])#format the user data nicely
     else:
         user_data_pprint = '';
-    return render_template('discussion.html',dump_user_data=user_data_pprint)
+    return render_template('page1.html',dump_user_data=user_data_pprint)
 
 @app.route('/page2')
 def renderPage2():
