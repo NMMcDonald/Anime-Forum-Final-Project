@@ -1,3 +1,7 @@
+import pymongo
+import sys
+
+
 from flask import Flask, redirect, url_for, session, request, jsonify
 from flask_oauthlib.client import OAuth
 #from flask_oauthlib.contrib.apps import github #import to make requests to GitHub's OAuth
@@ -32,7 +36,12 @@ github = oauth.remote_app(
     access_token_url='https://github.com/login/oauth/access_token',  
     authorize_url='https://github.com/login/oauth/authorize' #URL for github's OAuth login
 )
-
+connection_string = os.environ["MONGO_CONNECTION_STRING"]
+db_name = os.environ["MONGO_DBNAME"]
+    
+client = pymongo.MongoClient(connection_string)
+db = client[db_name]
+collection = db['Form-Project'] #1. put the name of your collection in the quotes
 
 #context processors run before templates are rendered and add variable(s) to the template's context
 #context processors must return a dictionary 
