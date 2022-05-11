@@ -91,9 +91,9 @@ def authorized():
 def renderdiscussion():
     return render_template('discussion.html')
 
-@app.route('/page2')
-def renderPage2():
-    return render_template('page2.html')
+@app.route('/rules')
+def renderrules():
+    return render_template('rules.html')
 
 @app.route('/googleb4c3aeedcc2dd103.html')
 def render_google_verification():
