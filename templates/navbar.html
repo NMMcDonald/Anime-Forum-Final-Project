@@ -5,15 +5,17 @@
     </li>
     <li {% if active_page == "discussion" %} class="nav-item active"{% else %}class="nav-item"{% endif %}>
       <a class="nav-link" href="/discussion">Discussion Topics</a>
-    </li> {% if logged_in %}
-       <li class="nav-item">Github userid: {{ session['user_data']['login']}}</li> 
+    </li> </ul>
+    <ul class="navbar-nav ml-auto"> 
+    {% if logged_in %}
+       <li class="nav-item" id="name">Github userid: {{ session['user_data']['login']}}</li> 
        
 	{% endif %}
        
 	  {% if logged_in %}
-	   <li class="nav-link log "><a href="/logout">Logout</a> </li>
+	   <li class="nav-link ml-auto "><a href="/logout">Logout</a> </li>
 	  {% else %}
-	   <li class="nav-link log"><a href="/login">Login</a> </li>
+	   <li class="nav-link ml-auto"><a href="/login">Login</a> </li>
 	  {% endif %}
   </ul>
 </nav>
