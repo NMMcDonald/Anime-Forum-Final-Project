@@ -4,6 +4,23 @@ body {
 #content {
      margin-left: 20px;
 }
+#Rules{
+   font-size: 50px;
+   margin-right:0%;
+   margin-left: 43%;
+   margin-top: 0%;
+   border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 150px;  
+}
+#text{
+   font-size: 25px;    
+   margin-right:0%;
+   margin-left: 45%; 
+   margin-bottom: 1%;
+}
 .log {
    margin-right: 350%;
    margin-left: 350%;
@@ -12,4 +29,5 @@ body {
 #name{
     color: white;
 }
+
 
