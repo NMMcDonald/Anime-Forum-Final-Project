@@ -1,6 +1,6 @@
 body {
-  background-color: rgba(0, 168, 255, 0.2)}
-
+  background-color: rgba(0, 168, 255, 0.2)
+  }
 #content {
      margin-left: 20px;
 }
@@ -13,13 +13,13 @@ body {
 .text{
    font-size: 25px;    
    margin-right:0%;
-   margin-left: 43%; 
+   margin-left: 33%; 
    margin-bottom: 1%;
    border-radius: 25px;
   border: 2px solid #73AD21;
   padding: 20px; 
-  width: 350px;
-  height: 250px;  
+  width: 650px;
+  height: 550px;  
 }
 .log {
    margin-right: 350%;
@@ -28,6 +28,29 @@ body {
 }
 #name{
     color: white;
+}
+#DT{
+  margin-right:40%;
+  margin-left: 20%; 
+  margin-bottom: 1%;
+  margin-top: 20%;
+   border-radius: 25px;
+  border: 10px solid #73AD21;
+  padding: 20px; 
+  width: 150px;
+  height: 50px;
+  background-color: {255, 150, 234;}
+}
+#WR{
+   margin-right:0%;
+  margin-left: 3%; 
+  margin-bottom: 1%;
+  margin-top: 20%;
+   border-radius: 25px;
+  border: 10px solid #73AD21;
+  padding: 20px; 
+  width: 150px;
+  height: 50px;
 }
 
 
