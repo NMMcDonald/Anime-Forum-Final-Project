@@ -109,10 +109,14 @@ def renderdiscussionfs():
     fShounen={'username': session['user_data']['login'],
     'post': request.form['message']}
     collection.insert_one(fShounen)
-    return render_template('discussion.html')
+    return render_template('discussion.html', Apost = get_formatted_posts())
 
-
-
+def get_formatted_posts():
+    posts = collection.find({})
+    formatted_posts = ""
+    for post in posts:
+        formatted_posts = formatted_posts + " " + post["username"] + " " + post["post"]
+    return formatted_posts
 
 if __name__ == '__main__':
     app.run(debug=True)
