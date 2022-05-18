@@ -51,10 +51,15 @@ body {
   padding: 20px; 
   width: 350px;
   height: 250px;
+  background-color: {255, 150, 234;}
 }
 h1{
-text-align:center;
+  text-align:center;
 }
+.test{
+  text-align:center;
+}
+
 
 
 
