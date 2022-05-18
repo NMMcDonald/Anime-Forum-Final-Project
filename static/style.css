@@ -30,15 +30,15 @@ body {
     color: white;
 }
 #DT{
-  margin-right:40%;
+  margin-right:25%;
   margin-left: 20%; 
   margin-bottom: 1%;
   margin-top: 20%;
    border-radius: 25px;
   border: 10px solid #73AD21;
   padding: 20px; 
-  width: 150px;
-  height: 50px;
+  width: 350px;
+  height: 250px;
   background-color: {255, 150, 234;}
 }
 #WR{
@@ -49,8 +49,11 @@ body {
    border-radius: 25px;
   border: 10px solid #73AD21;
   padding: 20px; 
-  width: 150px;
-  height: 50px;
+  width: 350px;
+  height: 250px;
+}
+h1{
+text-align:center;
 }
 
 
