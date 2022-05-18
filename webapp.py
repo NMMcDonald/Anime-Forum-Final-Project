@@ -44,7 +44,7 @@ db_name = os.environ["MONGO_DBNAME"]
 client = pymongo.MongoClient(connection_string)
 db = client[db_name]
 collection = db['Form-Project'] #1. put the name of your collection in the quotes
-collection.insert_one({ 'test': 'test1'})
+#collection.insert_one({ 'test': 'test1'})
 #context processors run before templates are rendered and add variable(s) to the template's context
 #context processors must return a dictionary 
 #this context processor adds the variable logged_in to the conext for all templates
@@ -104,6 +104,15 @@ def render_google_verification():
 def get_github_oauth_token():
     return session['github_token']
 
+@app.route('/discussionfs',methods=['GET','POST'])
+def renderdiscussionfs():
+    fShounen={'username': session['user_data']['login'],
+    'post': request.form['message']}
+    collection.insert_one(fShounen)
+    return render_template('discussion.html')
+
+
+
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
