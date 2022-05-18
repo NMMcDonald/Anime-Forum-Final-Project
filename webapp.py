@@ -89,7 +89,7 @@ def authorized():
 
 @app.route('/discussion')
 def renderdiscussion():
-    return render_template('discussion.html')
+    return render_template('discussion.html', Apost = get_formatted_posts())
 
 @app.route('/rules')
 def renderrules():

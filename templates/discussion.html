@@ -36,9 +36,20 @@
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
-        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        <div class="panel-body">
+          {{Apost}}
+          {% if logged_in %}
+          <form method="post" action="{{ url_for('renderdiscussionfs')}}">
+            <input type="text" name="message">
+            <input type="submit" value="Submit">
+            </form>
+            {% else %} 
+            <a href="http://127.0.0.1:5000/login">
+              <button type="button">Click to Login!</button>
+              </a>
+          {% endif %}
+
+        </div>
       </div>
     </div>
     <div class="panel panel-default test">
