@@ -34,30 +34,30 @@ body {
   margin-left: 15%; 
   margin-bottom: 1%;
   margin-top: 12%;
-   border-radius: 25px;
+  border-radius: 25px;
   border: 10px solid #FF99FF;
   padding: 20px; 
   width: 450px;
   height: 350px;
   background-color: #FF99FF;
-   font-size: 30px;
-   color: rgba(255,255,255)
-   font-family: Copperplate, Papyrus, fantasy;
+  font-size: 30px;
+  color: rgba(255,255,255);
+  font-family: Copperplate, Papyrus, fantasy;
 }
 #WR{
-   margin-right:0%;
+  margin-right:0%;
   margin-left: 0%; 
   margin-bottom: 1%;
   margin-top: 12%;
-   border-radius: 25px;
+  border-radius: 25px;
   border: 10px solid #FF99FF;
   padding: 20px; 
   width: 450px;
   height: 350px;
   background-color: #FF99FF;
-   font-size: 30px;
-   color: rgba(255,255,255)
-  font-family: "Copperplate", Fantasy,
+  font-size: 30px;
+  color: rgba(255,255,255);
+  font-family: Copperplate, Papyrus, fantasy;
 }
 h1{
   text-align:center;
