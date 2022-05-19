@@ -31,34 +31,42 @@ body {
 }
 #DT{
   margin-right:25%;
-  margin-left: 20%; 
+  margin-left: 15%; 
   margin-bottom: 1%;
-  margin-top: 20%;
+  margin-top: 12%;
    border-radius: 25px;
   border: 10px solid #FF99FF;
   padding: 20px; 
-  width: 350px;
-  height: 250px;
-  background-color: {255, 150, 234;}
+  width: 450px;
+  height: 350px;
+  background-color: #FF99FF;
+   font-size: 30px;
+   color: rgba(255,255,255)
+   font-family: Copperplate, Papyrus, fantasy;
 }
 #WR{
    margin-right:0%;
-  margin-left: 3%; 
+  margin-left: 0%; 
   margin-bottom: 1%;
-  margin-top: 20%;
+  margin-top: 12%;
    border-radius: 25px;
   border: 10px solid #FF99FF;
   padding: 20px; 
-  width: 350px;
-  height: 250px;
-  background-color: {255, 150, 234;}
+  width: 450px;
+  height: 350px;
+  background-color: #FF99FF;
+   font-size: 30px;
+   color: rgba(255,255,255)
+  font-family: "Copperplate", Fantasy,
 }
 h1{
   text-align:center;
+
 }
 .test{
   text-align:center;
 }
+
 
 
 
