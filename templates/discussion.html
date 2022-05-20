@@ -14,10 +14,11 @@
       </div>
       <div id="collapse1" class="panel-collapse collapse in">
         <div class="panel-body">
-          {{Apost}}
+          {{post1}}
           {% if logged_in %}
           <form method="post" action="{{ url_for('renderdiscussionfs')}}">
-            <input type="text" name="message">
+            <input type="button">
+            <input type="text" name="message1">
             <input type="submit" value="Submit">
             </form>
             {% else %} 
@@ -37,10 +38,10 @@
       </div>
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body">
-          {{Apost}}
+          {{post2}}
           {% if logged_in %}
           <form method="post" action="{{ url_for('renderdiscussionfs')}}">
-            <input type="text" name="message">
+            <input type="text" name="message2">
             <input type="submit" value="Submit">
             </form>
             {% else %} 
@@ -59,9 +60,20 @@
         </h4>
       </div>
       <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        <div class="panel-body">
+          {{post3}}
+          {{post2}}
+          {% if logged_in %}
+          <form method="post" action="{{ url_for('renderdiscussionfs')}}">
+            <input type="text" name="message2">
+            <input type="submit" value="Submit">
+            </form>
+            {% else %} 
+            <a href="http://127.0.0.1:5000/login">
+              <button type="button">Click to Login!</button>
+              </a>
+          {% endif %}
+        </div>
       </div>
     </div>
   </div> 
