@@ -89,7 +89,7 @@ def authorized():
 
 @app.route('/discussion')
 def renderdiscussion():
-    return render_template('discussion.html', Apost = get_formatted_posts())
+    return render_template('discussion.html', post1 = get_formatted_posts("Favorite Shounen Anime"), post2 = get_formatted_posts("Topic Title"), post3 = get_formatted_posts("Collapsible Group 3"))
 
 @app.route('/rules')
 def renderrules():
@@ -106,13 +106,27 @@ def get_github_oauth_token():
 
 @app.route('/discussionfs',methods=['GET','POST'])
 def renderdiscussionfs():
-    fShounen={'username': session['user_data']['login'],
-    'post': request.form['message']}
-    collection.insert_one(fShounen)
-    return render_template('discussion.html', Apost = get_formatted_posts())
+    if 'message1' in request.form:
+        fShounen={'username': session['user_data']['login'],
+        'post': request.form['message1'],
+        'topic': "Favorite Shounen Anime" }
+    elif 'message2' in request.form:
+        fShounen={'username': session['user_data']['login'],
+        'post': request.form['message2'],
+        'topic': "Topic Title" }
+    elif 'message3' in request.form:
+        fShounen={'username': session['user_data']['login'],
+        'post': request.form['message3'],
+        'topic': "Collapsible Group 3" }
 
-def get_formatted_posts():
-    posts = collection.find({})
+
+    collection.insert_one(fShounen)
+    return render_template('discussion.html', post1 = get_formatted_posts("Favorite Shounen Anime"), post2 = get_formatted_posts("Topic Title"), post3 = get_formatted_posts("Collapsible Group 3"))
+
+def get_formatted_posts(topic):
+    posts = collection.find({"topic": topic})
+
+
     formatted_posts = ""
     for post in posts:
         formatted_posts = formatted_posts + " " + post["username"] + " " + post["post"]
