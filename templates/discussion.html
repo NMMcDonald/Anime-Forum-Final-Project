@@ -16,8 +16,9 @@
         <div class="panel-body">
           {{post1}}
           {% if logged_in %}
-          <form method="post" action="{{ url_for('renderdiscussionfs')}}">
-            <input type="button">
+          <form method="post" action="{{ url_for('renderdiscussionfs')}}" class="display-none">
+            <input type="button">Post</button>
+
             <input type="text" name="message1">
             <input type="submit" value="Submit">
             </form>
@@ -40,7 +41,7 @@
         <div class="panel-body">
           {{post2}}
           {% if logged_in %}
-          <form method="post" action="{{ url_for('renderdiscussionfs')}}">
+          <form method="post" action="{{ url_for('renderdiscussionfs')}}" class="display-none">
             <input type="text" name="message2">
             <input type="submit" value="Submit">
             </form>
@@ -64,7 +65,7 @@
           {{post3}}
           {{post2}}
           {% if logged_in %}
-          <form method="post" action="{{ url_for('renderdiscussionfs')}}">
+          <form method="post" action="{{ url_for('renderdiscussionfs')}}" class="display-none">
             <input type="text" name="message2">
             <input type="submit" value="Submit">
             </form>
