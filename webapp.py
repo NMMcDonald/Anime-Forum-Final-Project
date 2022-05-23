@@ -1,5 +1,5 @@
 
-
+import spacy
 import pymongo
 import sys
 
@@ -44,6 +44,7 @@ db_name = os.environ["MONGO_DBNAME"]
 client = pymongo.MongoClient(connection_string)
 db = client[db_name]
 collection = db['Form-Project'] #1. put the name of your collection in the quotes
+nlp = spacy.load("en_core_web_sm") #Bad words list
 #collection.insert_one({ 'test': 'test1'})
 #context processors run before templates are rendered and add variable(s) to the template's context
 #context processors must return a dictionary 
