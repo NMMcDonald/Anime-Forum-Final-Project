@@ -5,24 +5,20 @@
 {% block content %}
   <h1>Welcome To The Discussion Page</h1>
 
-  <div class="panel-group" id="accordion">
-    <div class="panel panel-default test">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Favorite Shounen Anime</a>
-        </h4>
+   <div id="accordion">
+    <div class="card">
+      <div class="card-header">
+        <a class="card-link" data-toggle="collapse" href="#collapseOne">
+          Favorite Shounen Anime
+        </a>
       </div>
-      <div id="collapse1" class="panel-collapse collapse in">
-        <div class="panel-body">
-          {{post1}}
+      <div id="collapseOne" class="collapse show" data-parent="#accordion">
+        <div class="card-body">
+        {{post1}}
           {% if logged_in %}
-          <form method="post" action="{{ url_for('renderdiscussionfs')}}" class="display-none">
-<<<<<<< HEAD
-            <input type="button">Post</button>
 
-=======
-            <input type="button">
->>>>>>> 6ed408a7289bdbbab090aff2bb238d6ee3207288
+          <form method="post" action="{{ url_for('renderdiscussionfs')}}" class="display-none">
+            <input type="button">Post</button>
             <input type="text" name="message1">
             <input type="submit" value="Submit">
             </form>
@@ -31,21 +27,20 @@
               <button type="button">Click to Login!</button>
               </a>
           {% endif %}
-
         </div>
       </div>
     </div>
-    <div class="panel panel-default test">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Topic Title</a>
-        </h4>
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+        Topic Title
+      </a>
       </div>
-      <div id="collapse2" class="panel-collapse collapse">
-        <div class="panel-body">
-          {{post2}}
+      <div id="collapseTwo" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+         {{post2}}
           {% if logged_in %}
-          <form method="post" action="{{ url_for('renderdiscussionfs')}}" class="display-none">
+          <form method="post" action="{{ url_for('renderdiscussionfs')}}">
             <input type="text" name="message2">
             <input type="submit" value="Submit">
             </form>
@@ -58,28 +53,28 @@
         </div>
       </div>
     </div>
-    <div class="panel panel-default test">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Collapsible Group 3</a>
-        </h4>
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+          Collapsible Group Item #3
+        </a>
       </div>
-      <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body">
-          {{post3}}
+      <div id="collapseThree" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+        {{post3}}
           {{post2}}
           {% if logged_in %}
           <form method="post" action="{{ url_for('renderdiscussionfs')}}" class="display-none">
-            <input type="text" name="message2">
+            <input type="text" name="message3">
             <input type="submit" value="Submit">
             </form>
             {% else %} 
             <a href="http://127.0.0.1:5000/login">
               <button type="button">Click to Login!</button>
               </a>
-          {% endif %}
+           {% endif %}
         </div>
       </div>
     </div>
-  </div> 
+  </div>
 {% endblock %}
