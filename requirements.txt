@@ -9,4 +9,4 @@ Flask-OAuthlib
 Flask-PyMongo
 pymongo
 dnspython
-spacy
+profanityfilter

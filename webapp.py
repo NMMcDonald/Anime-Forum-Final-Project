@@ -1,5 +1,5 @@
 
-import spacy
+from profanityfilter import ProfanityFilter
 import pymongo
 import sys
 
@@ -44,7 +44,8 @@ db_name = os.environ["MONGO_DBNAME"]
 client = pymongo.MongoClient(connection_string)
 db = client[db_name]
 collection = db['Form-Project'] #1. put the name of your collection in the quotes
-nlp = spacy.load("en_core_web_sm") #Bad words list
+pf = ProfanityFilter()
+
 #collection.insert_one({ 'test': 'test1'})
 #context processors run before templates are rendered and add variable(s) to the template's context
 #context processors must return a dictionary 
@@ -109,15 +110,15 @@ def get_github_oauth_token():
 def renderdiscussionfs():
     if 'message1' in request.form:
         fShounen={'username': session['user_data']['login'],
-        'post': request.form['message1'],
+        'post': pf.censor(request.form['message1']),
         'topic': "Favorite Shounen Anime" }
     elif 'message2' in request.form:
         fShounen={'username': session['user_data']['login'],
-        'post': request.form['message2'],
+        'post': pf.censor(request.form['message2']),
         'topic': "Topic Title" }
     elif 'message3' in request.form:
         fShounen={'username': session['user_data']['login'],
-        'post': request.form['message3'],
+        'post': pf.censor(request.form['message3']),
         'topic': "Collapsible Group 3" }
 
 
