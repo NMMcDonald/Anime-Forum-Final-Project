@@ -17,7 +17,8 @@
         {{post1}}
           {% if logged_in %}
           <form method="post" action="{{ url_for('renderdiscussionfs')}}" class="display-none">
-            <input type="text" name="message1">
+            <label for="comment">  {{ session['user_data']['login']}}: </label>
+            <textarea class="form-control" rows="5" id="comment" name="message1"></textarea>
             <input type="submit" value="Submit">
             </form>
             {% else %} 
@@ -40,7 +41,8 @@
          {{post2}}
           {% if logged_in %}
           <form method="post" action="{{ url_for('renderdiscussionfs')}}" class="display-none">
-            <input type="text" name="message2">
+            <label for="comment">  {{ session['user_data']['login']}}: </label>
+            <textarea class="form-control" rows="5" id="comment" name="message2"></textarea>
             <input type="submit" value="Submit">
             </form>
             {% else %} 
@@ -63,7 +65,8 @@
         {{post3}}
           {% if logged_in %}
           <form method="post" action="{{ url_for('renderdiscussionfs')}}" class="display-none">
-            <input type="text" name="message3">
+            <label for="comment">  {{ session['user_data']['login']}}: </label>
+            <textarea class="form-control" rows="5" id="comment" name="message3"></textarea>
             <input type="submit" value="Submit">
             </form>
             {% else %} 

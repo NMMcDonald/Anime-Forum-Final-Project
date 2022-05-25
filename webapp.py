@@ -4,7 +4,7 @@ import pymongo
 import sys
 
 
-from flask import Flask, redirect, url_for, session, request, jsonify
+from flask import Flask, redirect, url_for, session, request, jsonify, Markup
 from flask_oauthlib.client import OAuth
 #from flask_oauthlib.contrib.apps import github #import to make requests to GitHub's OAuth
 from flask import render_template
@@ -131,7 +131,7 @@ def get_formatted_posts(topic):
 
     formatted_posts = ""
     for post in posts:
-        formatted_posts = formatted_posts + " " + post["username"] + " " + post["post"]
+        formatted_posts = formatted_posts  + Markup('<div class="BD">'+ post["username"]+"</div>")  + Markup('<div class="BD">'+ post["post"]+"</div>")
     return formatted_posts
 
 if __name__ == '__main__':
