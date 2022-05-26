@@ -131,7 +131,7 @@ def get_formatted_posts(topic):
 
     formatted_posts = ""
     for post in posts:
-        formatted_posts = formatted_posts  + Markup('<div class="BD">'+ post["username"]+"</div>")  + Markup('<div class="BD">'+ post["post"]+"</div>")
+        formatted_posts = formatted_posts  + Markup('<div class="BD"><p>'+ post["username"] + "</p><p>"+  post["post"]+"</p></div>")
     return formatted_posts
 
 if __name__ == '__main__':
