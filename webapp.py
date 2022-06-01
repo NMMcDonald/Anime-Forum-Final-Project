@@ -21,7 +21,6 @@ app = Flask(__name__)
 
 app.debug = False #Change this to False for production
 #os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1' #Remove once done debugging
-os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 app.secret_key = os.environ['SECRET_KEY'] #used to sign session cookies
 oauth = OAuth(app)
 oauth.init_app(app) #initialize the app to be able to make requests for user information
@@ -61,7 +60,7 @@ def home():
 #redirect to GitHub's OAuth page and confirm callback URL
 @app.route('/login')
 def login():   
-    return github.authorize(callback=url_for('authorized', _external=True, _scheme='http')) #callback URL must match the pre-configured callback URL
+    return github.authorize(callback=url_for('authorized', _external=True, _scheme='https')) #callback URL must match the pre-configured callback URL
 
 @app.route('/logout')
 def logout():
