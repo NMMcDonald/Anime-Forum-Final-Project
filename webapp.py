@@ -132,7 +132,7 @@ def get_formatted_posts(topic):
     formatted_posts = ""
     for post in posts:
     
-        formatted_posts = formatted_posts  + Markup('<div class="BD"><p>'+ post["username"] + "</p><p>"+  post["post"]+'</p><button name="Up" value="'+str( post ["_id"])+'"><i onclick="myFunction(this)" class="fa fa-thumbs-up"></i><i onclick="myFunction(this)" class="fa fa-thumbs-down"></i></button></div>')
+        formatted_posts = formatted_posts  + Markup('<div class="BD"><p>'+ post["username"] + "</p><p>"+  post["post"]+'</p><form <input type="submit" value="Submit"><button name="Up" value="'+str( post ["_id"])+'"><i onclick="myFunction(this)" class="fa fa-thumbs-up"></i><i onclick="myFunction(this)" class="fa fa-thumbs-down"></i></form></button></div>')
     return formatted_posts
 
 if __name__ == '__main__':
